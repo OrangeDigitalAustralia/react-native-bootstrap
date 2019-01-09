@@ -5,8 +5,8 @@
     "scripts": {
         "start-android-debug": "react-native run-android --variant debug --appIdSuffix 'debug'",
         "start-android-staging": "react-native run-android --variant releaseStaging --appIdSuffix 'staging'",
-        "start-ios-sim": "react-native run-ios --simulator 'iPhone 6'",
-        "start-ios-sim-staging": "react-native run-ios --simulator 'iPhone 6' --configuration 'Staging'",
+        "start-ios-debug": "react-native run-ios --simulator 'iPhone 6s'",
+        "start-ios-staging": "react-native run-ios --simulator 'iPhone 6s' --configuration 'Staging'",
         "start": "node node_modules/react-native/local-cli/cli.js start",
         "test": "jest"
     },
