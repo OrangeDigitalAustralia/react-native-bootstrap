@@ -26,7 +26,7 @@ const Properties = {
 };
 
 const Events = {
-    EXAMPLE: 'example'
+    SCREEN_CLOSED: 'screen_closed'
 };
 
 export default Analytics;
