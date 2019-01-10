@@ -15,15 +15,6 @@ const globalStyles = StyleSheet.create({
     spaceBetweenChildren: { justifyContent: 'space-between' },
     spaceAroundChildren: { justifyContent: 'space-around' },
     screenContainer: { paddingHorizontal: 20 },
-    logoCenterTop: {
-        alignSelf: 'center',
-        marginTop: 30,
-        height: 50,
-        width: 50,
-        ...ifIphoneX({
-            marginTop: 50
-        })
-    },
     keyboardToolbar: {
         justifyContent: 'flex-end',
         height: 40
@@ -69,9 +60,7 @@ const globalStyles = StyleSheet.create({
     ptop40: { paddingTop: 40 },
     pbottom20: { paddingBottom: 20 },
     // Fonts
-    fontBrandon: { fontFamily: 'BrandonGrotesque-Regular' },
-    fontBrandonBold: { fontFamily: 'BrandonGrotesque-Bold' },
-    fontOpenSans: { fontFamily: 'OpenSans' },
+    fontLato: { fontFamily: 'Lato' },
     font14: { fontSize: 14 },
     font16: { fontSize: 16 },
     font18: { fontSize: 18 },
@@ -102,14 +91,6 @@ const globalStyles = StyleSheet.create({
     // Visibility
     visible: { opacity: 1 },
     invisible: { opacity: 0 },
-    androidFormSection: {
-        ...Platform.select({
-            android: {
-                backgroundColor: 'white',
-                elevation: 2,
-            }
-        })
-    }
 });
 
-export default { ...globalStyles, brandLightGreen, brandDarkBlue };
+export default globalStyles;
