@@ -36,7 +36,7 @@ You should also create new applications at Microsoft's App Center and generate n
 
 * On Android, CodePush Keys should be placed in the app level **build.gradle** file (`<projectRoot>/android/app/build.gradle`), on the **buildTypes** section. Detailed instructions available [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#android).
 
-* On iOS, CodePush Keys are saved with User Defined variables. You can change them by opening the **.xcworkspace** file under the **ios** folder, selecting the app's target, opening the **Build Settings** tab and replacing the values for the variable **CODEPUSH_KEY**. Detailed instructions available [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#ios).
+* On iOS, CodePush Keys are saved with User Defined variables. You can change them by opening the **.xcworkspace** file (with XCode) under the **ios** folder, selecting the app's target, opening the **Build Settings** tab and replacing the values for the variable **CODEPUSH_KEY**. Detailed instructions available [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#ios).
 
 # Running the project
 This project comes with [CodePush](https://github.com/Microsoft/react-native-code-push) pre-configured. This means you can easily deploy over-the-air updates with a single command on the terminal. 
