@@ -1,13 +1,13 @@
 import React from 'react';
 import { Text, Platform, StyleSheet } from 'react-native';
-import { Stack, Modal, Scene, Router, Lightbox } from 'react-native-router-flux';
+import { Actions, Stack, Modal, Scene, Router, Lightbox } from 'react-native-router-flux';
 
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import Analytics from '../libs/analytics';
+import Analytics, { Events } from '../libs/analytics';
 import globalStyles from './styles';
 
 import WebviewScreen from '../screens/webviewScreen';
 import MainScreen from '../screens/mainScreen';
+import SafeViewScreen from '../screens/safeViewScreen';
 
 const {
     brandLightGreen
@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
         display: 'none'
     },
     titleStyle: {
-        fontWeight: 'normal',
-        fontSize: 20,
+        fontWeight: '400',
+        fontFamily: 'Lato',
+        fontSize: 18,
         width: '90%',
         color: 'black',
         ...Platform.select({
@@ -63,6 +64,17 @@ const renderTitle = (props) => {
     );
 };
 
+// This custom back function will log screen close events to Firebase
+const { pop } = Actions;
+const customPop = () => {
+    Analytics.logEvent(Events.SCREEN_CLOSED);
+
+    pop();
+};
+
+Actions.pop = customPop;
+const onBack = customPop;
+
 export default () => (
     <Router
         key="root"
@@ -76,16 +88,18 @@ export default () => (
             renderTitle={renderTitle}
             navigationBarStyle={styles.navBarStyles}
             leftButtonIconStyle={styles.modalWindowLeftButton}
+            backTitle=" "
+            onBack={onBack}
         >
             <Lightbox key="lightboxRoute" hideNavBar>
                 <Stack key="dashboard">
-                    <Scene key="mainScreen" androidBackDisabled initial component={MainScreen} />
+                    <Scene key="mainScreen" androidBackDisabled initial title="Welcome" component={MainScreen} />
+                    <Scene key="safeViewScreen" back title="Thanks Apple" component={SafeViewScreen} />
                 </Stack>
                 <Scene key="exampleLightbox" component={MainScreen} />
             </Lightbox>
 
             <Scene
-                titleStyle={styles.titleStyle}
                 key="webviewScreen"
                 component={WebviewScreen}
             />
