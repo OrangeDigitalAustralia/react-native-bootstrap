@@ -1,30 +1,19 @@
 import React from 'react';
 import { Text, Platform, StyleSheet } from 'react-native';
-import { Actions, Stack, Modal, Scene, Router, Lightbox } from 'react-native-router-flux';
+import { Actions, Stack, Modal, Drawer, Scene, Router, Lightbox } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import { DrawerContent } from '../components';
 import Analytics, { Events } from '../libs/analytics';
-import globalStyles from './styles';
 
 import WebviewScreen from '../screens/webviewScreen';
 import MainScreen from '../screens/mainScreen';
 import SafeViewScreen from '../screens/safeViewScreen';
-
-const {
-    brandLightGreen
-} = globalStyles;
+import closeIcon from '../images/close.png';
 
 const styles = StyleSheet.create({
-    navBarWithElevation: {
-        elevation: 4
-    },
     navBarStyles: {
-        backgroundColor: 'white',
-        height: Platform.OS === 'android' ? 56 : 44,
-        elevation: 0,
-        borderBottomWidth: 0,
-    },
-    rightButtonTextStyle: {
-        color: brandLightGreen,
+        backgroundColor: '#FBFBFB',
     },
     backButtonTextStyle: {
         display: 'none'
@@ -45,7 +34,8 @@ const styles = StyleSheet.create({
         width: 20,
         ...Platform.select({
             ios: {
-                left: 8,
+                top: 4,
+                left: 4,
             }
         })
     }
@@ -92,16 +82,38 @@ export default () => (
             onBack={onBack}
         >
             <Lightbox key="lightboxRoute" hideNavBar>
-                <Stack key="dashboard">
-                    <Scene key="mainScreen" androidBackDisabled initial title="Welcome" component={MainScreen} />
-                    <Scene key="safeViewScreen" back title="Thanks Apple" component={SafeViewScreen} />
-                </Stack>
+                <Drawer
+                    hideNavBar
+                    key="drawerRoute"
+                    contentComponent={DrawerContent}
+                    drawerIcon={() => <Icon name="menu" size={30} color="black" />}
+                    navigationBarStyle={styles.navBarStyles}
+                    renderTitle={renderTitle}
+                    navBarButtonColor="black"
+                    backTitle=""
+                    onBack={onBack}
+                >
+                    <Stack key="dashboard" drawerLockMode="locked-closed">
+                        <Scene key="mainScreen" androidBackDisabled initial title="Welcome" component={MainScreen} />
+                        <Scene key="safeViewScreen" back title="Thanks Apple" component={SafeViewScreen} />
+                    </Stack>
+                </Drawer>
+
+                {/*
+                    Any scenes defined after the "dashboard" Stack lightboxes. In other words,
+                    they'll be translucent.
+                */}
                 <Scene key="exampleLightbox" component={MainScreen} />
             </Lightbox>
 
+            {/*
+                Any scenes defined after the lightbox will be "modals". In other words,
+                they'll animate from the bottom.
+            */}
             <Scene
                 key="webviewScreen"
                 component={WebviewScreen}
+                {...(Platform.OS === 'ios' ? { backButtonImage: closeIcon } : {})}
             />
         </Modal>
     </Router>
