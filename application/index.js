@@ -14,18 +14,16 @@ import ReduxThunk from 'redux-thunk';
 import codePush from 'react-native-code-push';
 import { createStore, applyMiddleware } from 'redux';
 
+import { UpdateProgressDialog } from './components';
 import reducers, { updateKeyboardHeight } from './store';
 import Router from './config/router';
 
 require('core-js/es6/array');
 
-/* eslint-disable no-underscore-dangle */
 const store = createStore(
     reducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(ReduxThunk),
 );
-/* eslint-enable */
 
 const codePushOptions = {
     updateDialog: true,
@@ -34,6 +32,34 @@ const codePushOptions = {
 };
 
 class App extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            updating: false,
+            updateProgress: ''
+        };
+    }
+
+    codePushStatusDidChange(status) {
+        switch (status) {
+            case codePush.SyncStatus.DOWNLOADING_PACKAGE:
+                this.setState({ updating: true });
+                break;
+            case codePush.SyncStatus.UPDATE_INSTALLED:
+                this.setState({ updating: false });
+                break;
+            default:
+                break;
+        }
+    }
+
+    codePushDownloadDidProgress({ receivedBytes, totalBytes }) {
+        this.setState({
+            updateProgress: `Updating... ${parseInt((receivedBytes / totalBytes) * 100)}%`
+        });
+    }
+
     componentWillMount() {
         // Configure global keyboard listener
         Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
@@ -76,6 +102,10 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Router />
+                <UpdateProgressDialog
+                    loading={this.state.updating}
+                    text={this.state.updateProgress}
+                />
             </Provider>
         );
     }

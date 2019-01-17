@@ -21,6 +21,11 @@
 		3F7BF0993A38A1CA267A68E7 /* libPods-RNBootstrap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41267A75FF9327C1857FCCC4 /* libPods-RNBootstrap.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		E22ECBA221E7100C001AAF85 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E22ECB9D21E7100C001AAF85 /* Lato-Light.ttf */; };
+		E22ECBA321E7100C001AAF85 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E22ECB9E21E7100C001AAF85 /* Lato-Regular.ttf */; };
+		E22ECBA421E7100C001AAF85 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E22ECB9F21E7100C001AAF85 /* Lato-Thin.ttf */; };
+		E22ECBA521E7100C001AAF85 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E22ECBA021E7100C001AAF85 /* Lato-Medium.ttf */; };
+		E22ECBA621E7100C001AAF85 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E22ECBA121E7100C001AAF85 /* Lato-Bold.ttf */; };
 		E2D6DBEB21C9E0F6009AD8E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D6DBEA21C9E0F6009AD8E0 /* AppDelegate.m */; };
 		E2D6DBED21C9E0FC009AD8E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D6DBEC21C9E0FC009AD8E0 /* main.m */; };
 		E2D6DBF621C9E16E009AD8E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D6DBF521C9E16E009AD8E0 /* Images.xcassets */; };
@@ -287,6 +292,13 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		E2563DE821F036E4000329C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83CBBA2D1A601D0E00E9B192;
+			remoteInfo = React;
+		};
 		E2D6DC3B21C9E6BF009AD8E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 168ABFCEBE404584980D1440 /* RNFirebase.xcodeproj */;
@@ -316,6 +328,11 @@
 		89B0F0908D7C47C2B49875E1 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
 		9AA111539B98AEB2FA7A6026 /* libPods-SandboxRudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SandboxRudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		E22ECB9D21E7100C001AAF85 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		E22ECB9E21E7100C001AAF85 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		E22ECB9F21E7100C001AAF85 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		E22ECBA021E7100C001AAF85 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		E22ECBA121E7100C001AAF85 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E2D6DBEA21C9E0F6009AD8E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E2D6DBEC21C9E0FC009AD8E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2D6DBEE21C9E119009AD8E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -499,6 +516,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E22ECBB821E7102F001AAF85 /* Resources */,
 				E2D6DBF421C9E132009AD8E0 /* RNBootstrap */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -536,6 +554,18 @@
 				F1816A31461A67293D0E551A /* Pods-RNBootstrap.staging.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E22ECBB821E7102F001AAF85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E22ECBA121E7100C001AAF85 /* Lato-Bold.ttf */,
+				E22ECB9D21E7100C001AAF85 /* Lato-Light.ttf */,
+				E22ECBA021E7100C001AAF85 /* Lato-Medium.ttf */,
+				E22ECB9E21E7100C001AAF85 /* Lato-Regular.ttf */,
+				E22ECB9F21E7100C001AAF85 /* Lato-Thin.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E2D6DBF021C9E120009AD8E0 /* Base.lproj */ = {
@@ -631,6 +661,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E2563DE921F036E4000329C7 /* PBXTargetDependency */,
 			);
 			name = RNBootstrap;
 			productName = "Hello World";
@@ -997,6 +1028,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22ECBA221E7100C001AAF85 /* Lato-Light.ttf in Resources */,
+				E22ECBA321E7100C001AAF85 /* Lato-Regular.ttf in Resources */,
+				E22ECBA421E7100C001AAF85 /* Lato-Thin.ttf in Resources */,
+				E22ECBA521E7100C001AAF85 /* Lato-Medium.ttf in Resources */,
+				E22ECBA621E7100C001AAF85 /* Lato-Bold.ttf in Resources */,
 				E2D6DBF621C9E16E009AD8E0 /* Images.xcassets in Resources */,
 				E2D6DBF721C9E1AC009AD8E0 /* LaunchScreen.xib in Resources */,
 			);
@@ -1017,7 +1053,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\nexport SKIP_BUNDLING=true\nfi\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "export DEVELOPMENT_BUILD_CONFIGURATIONS=\"+(Debug)\"\nexport NODE_BINARY=node\n../node_modules/react-native-schemes-manager/lib/react-native-xcode.sh";
 		};
 		48F2D1DE697836BCCC94BD0E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1158,6 +1194,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2563DE921F036E4000329C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = React;
+			targetProxy = E2563DE821F036E4000329C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E2D6DBF121C9E120009AD8E0 /* LaunchScreen.xib */ = {
@@ -1444,8 +1488,8 @@
 				APP_NAME = "RNB - Staging";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)";
-				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/Staging$(EFFECTIVE_PLATFORM_NAME)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 32432X6264;
 				FRAMEWORK_SEARCH_PATHS = (
