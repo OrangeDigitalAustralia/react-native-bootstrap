@@ -1,5 +1,5 @@
 {
-    "name": "RNBootstrap",
+    "name": "react-native-bootstrap",
     "version": "0.0.1",
     "private": true,
     "scripts": {
@@ -8,7 +8,14 @@
         "start-ios-debug": "react-native run-ios --simulator 'iPhone 6s'",
         "start-ios-staging": "react-native run-ios --simulator 'iPhone 6s' --configuration 'Staging'",
         "start": "node node_modules/react-native/local-cli/cli.js start",
+        "postinstall": "react-native-schemes-manager all",
+        "release-update-ios": "appcenter codepush release-react -a <ownerName>/<appName> --plist-file 'ios/RNBootstrap/Info.plist'",
+        "release-update-android": "appcenter codepush release-react -a <ownerName>/<appName>",
         "test": "jest"
+    },
+    "xcodeSchemes": {
+        "Debug": [],
+        "Release": ["Staging"]
     },
     "dependencies": {
         "moment": "2.23.0",
@@ -40,6 +47,7 @@
         "eslint-plugin-react": "^7.11.1",
         "jest": "23.6.0",
         "metro-react-native-babel-preset": "0.48.5",
+        "react-native-schemes-manager": "^1.0.5",
         "react-test-renderer": "16.6.1"
     },
     "jest": {
