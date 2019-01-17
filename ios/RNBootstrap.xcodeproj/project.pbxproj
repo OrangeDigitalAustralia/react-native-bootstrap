@@ -1053,7 +1053,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export DEVELOPMENT_BUILD_CONFIGURATIONS=\"+(Debug)\"\nexport NODE_BINARY=node\n../node_modules/react-native-schemes-manager/lib/react-native-xcode.sh\n";
+			shellScript = "export DEVELOPMENT_BUILD_CONFIGURATIONS=\"+(Debug)\"\nexport NODE_BINARY=node\n../node_modules/react-native-schemes-manager/lib/react-native-xcode.sh";
 		};
 		48F2D1DE697836BCCC94BD0E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1531,7 +1531,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PODS_CONFIGURATION_BUILD_DIR = "${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_CONFIGURATION_BUILD_DIR = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "--APP-ID-";
 				PRODUCT_NAME = RNBootstrap;
 				REACT_HEADERS_PATH = "$(BUILD_DIR)/Release-$(PLATFORM_NAME)/include";

@@ -93,6 +93,7 @@ export default () => (
                     backTitle=""
                     onBack={onBack}
                 >
+                    {/* drawerLockMode will prevent users from opening the drawer by dragging it from the corner of the screen  */}
                     <Stack key="dashboard" drawerLockMode="locked-closed">
                         <Scene key="mainScreen" androidBackDisabled initial title="Welcome" component={MainScreen} />
                         <Scene key="safeViewScreen" back title="Thanks Apple" component={SafeViewScreen} />

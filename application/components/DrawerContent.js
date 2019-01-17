@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Platform, ScrollView, StyleSheet, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import globalStyles from '../config/styles';
+import AppRating from '../libs/app-rating';
 
 const {
     brandLightGreen,
@@ -36,6 +37,7 @@ const DrawerContent = () => (
             You can close the drawer by pressing outside of it, dragging it or programatically (button below)
         </Text>
         <Button onPress={Actions.drawerClose} title="Close Drawer" />
+        <Button onPress={AppRating.promptAppRating} title="Rate App" />
     </ScrollView>
 );
 

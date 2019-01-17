@@ -34,6 +34,7 @@ target 'RNBootstrap' do
     pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
     pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
     pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+    pod 'RNRate', :path => '../node_modules/react-native-rate/ios'
 end
 
 post_install do |installer|

@@ -9,13 +9,15 @@
         "start-ios-staging": "react-native run-ios --simulator 'iPhone 6s' --configuration 'Staging'",
         "start": "node node_modules/react-native/local-cli/cli.js start",
         "postinstall": "react-native-schemes-manager all",
-        "release-update-ios": "appcenter codepush release-react -a <ownerName>/<appName> --plist-file 'ios/RNBootstrap/Info.plist'",
+        "release-update-ios": "appcenter codepush release-react -a <ownerName>/<appName> --plist-file 'your info.plist file location'",
         "release-update-android": "appcenter codepush release-react -a <ownerName>/<appName>",
         "test": "jest"
     },
     "xcodeSchemes": {
         "Debug": [],
-        "Release": ["Staging"]
+        "Release": [
+            "Staging"
+        ]
     },
     "dependencies": {
         "moment": "2.23.0",
@@ -28,6 +30,7 @@
         "react-native-firebase": "5.0.0",
         "react-native-iphone-x-helper": "1.2.0",
         "react-native-permissions": "1.1.1",
+        "react-native-rate": "^1.1.6",
         "react-native-router-flux": "4.0.6",
         "react-native-vector-icons": "6.1.0",
         "react-redux": "6.0.0",
