@@ -1,6 +1,7 @@
 import firebase from 'react-native-firebase';
 import { Actions } from 'react-native-router-flux';
 
+// Analytics events are on by default.
 firebase.analytics().setAnalyticsCollectionEnabled(true);
 
 const Analytics = {
@@ -10,12 +11,15 @@ const Analytics = {
     setUserId: userId => firebase.analytics().setUserId(userId),
     setUserProperty: (k, v) => firebase.analytics().setUserProperty(k, `${v}`),
     onScreenChanged: () => {
+        // Dont log RNRF-generated wrapper scenes.
         if (Actions.currentScene.startsWith('page_key')) return;
 
+        // Log screen opening event on Firebase Analytics if the current scene (just opened) is different than the previous.
         if (Actions.currentScene !== Analytics.previousScreen) {
             firebase.analytics().setCurrentScreen(Actions.currentScene);
             firebase.analytics().logEvent(`page_${Actions.currentScene}`);
 
+            // Keep track of the previously opened screen.
             Analytics.previousScreen = Actions.currentScene;
         }
     }
